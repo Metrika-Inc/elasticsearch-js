@@ -6,6 +6,7 @@
   "main": "index.js",
   "types": "index.d.ts",
   "scripts": {
+    "json-schema": "ts-json-schema-generator --path 'src/api/types.ts' --type 'SearchRequest' >> ElasticSearchRequest.json",
     "test": "npm run build && npm run lint && tap test/{unit,acceptance}/{*,**/*}.test.ts",
     "test:unit": "npm run build && tap test/unit/{*,**/*}.test.ts",
     "test:acceptance": "npm run build && tap test/acceptance/*.test.ts",
@@ -48,6 +49,7 @@
     "node": ">=14"
   },
   "devDependencies": {
+    "ts-json-schema-generator": "^1.0.0",
     "@sinonjs/fake-timers": "github:sinonjs/fake-timers#0bfffc1",
     "@types/debug": "^4.1.7",
     "@types/ms": "^0.7.31",
